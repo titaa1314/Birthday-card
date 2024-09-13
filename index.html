@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Asttuty&display=swap');
+      
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #fdebd3; /* Background color */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+
+      .card {
+        width: 640px;
+        height: 400px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        -webkit-perspective: 1200px;
+        perspective: 1200px;
+        transition: 1s;
+      }
+
+      .card:hover {
+        transform: rotate(-5deg);
+      }
+
+      .card:hover .outside {
+        transform: rotateY(-130deg);
+      }
+
+      .outside,
+      .inside {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 50.1%;
+      }
+
+      .inside {
+        background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+        line-height: 1.4;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        left: 50%;
+        font-family: 'Asttuty', sans-serif;
+      }
+
+      .outside {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        z-index: 1;
+        transform-origin: left;
+        transition: 2s;
+        cursor: pointer;
+      }
+
+      .front,
+      .back {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+      }
+
+      .front {
+        background-color: #ffffff;
+      }
+
+      .back {
+        transform: rotateY(180deg);
+        background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+      }
+
+      .photo {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+      }
+
+      .outside p {
+        font-size: 23px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        text-align: center;
+        letter-spacing: 6px;
+        color: #000046;
+      }
+
+      .inside p {
+        font-size: 14px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .inside h1 {
+        font-size: 120px;
+        line-height: 120px;
+      }
+
+      /* Dandelion falling animation */
+      .dandelion {
+        position: absolute;
+        width: 30px;
+        height: auto;
+        animation: fall 8s linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+
+      /* Multiple dandelions with random positions */
+      .dandelion:nth-child(1) {
+        left: 10%;
+        animation-duration: 6s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(2) {
+        left: 20%;
+        animation-duration: 7s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(3) {
+        left: 30%;
+        animation-duration: 8s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(4) {
+        left: 40%;
+        animation-duration: 6s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(5) {
+        left: 50%;
+        animation-duration: 7s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(6) {
+        left: 60%;
+        animation-duration: 8s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(7) {
+        left: 70%;
+        animation-duration: 6s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(8) {
+        left: 80%;
+        animation-duration: 7s;
+        animation-delay: 0s;
+      }
+      .dandelion:nth-child(9) {
+        left: 90%;
+        animation-duration: 8s;
+        animation-delay: 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background music autoplay -->
+    <audio autoplay>
+      <source src="sempurna.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card">
+      <div class="outside">
+        <div class="front">
+          <p>Happy 20th Birthday Farah</p>
+          <div class="photo">
+            <!-- Masukkan foto pertama di sini -->
+            <img src="pic1.png" alt="Foto pertama" class="photo">
+          </div>
+        </div>
+        <div class="back">
+          <div class="photo">
+            <!-- Masukkan foto kedua di sini -->
+            <img src="pic2.png" alt="Foto kedua" class="photo">
+          </div>
+        </div>
+      </div>
+      <div class="inside">
+        <p>
+          Hari ini, aku langitkan semua doa terbaik aku untuk kamu. Sesuai sama nama kamu 'Farah' yang artinya kebahagian. Semoga hari hari berikutnya kamu diiringi kebahagian yang tidak ada habisnya. Semoga kebahagian kamu bersama orang tua yang selalu kamu impikan itu kini sudah terlaksana. Dan yang paling penting semoga kamu selalu menjadi anak yang sholehah yang bukan di dunia saja. Sehat selalu yh cantik.
+        </p>
+        <h1>&#127873;</h1>
+      </div>
+    </div>
+
+    <!-- Dandelions falling animation -->
+    <img src="leaves1.png" class="dandelion" alt="Dandelion">
+    <img src="leaves2.png" class="dandelion" alt="Dandelion">
+    <img src="leaves3.png" class="dandelion" alt="Dandelion">
+    <img src="leaves4.png" class="dandelion" alt="Dandelion">
+    <img src="leaves1.png" class="dandelion" alt="Dandelion">
+    <img src="leaves2.png" class="dandelion" alt="Dandelion">
+    <img src="leaves3.png" class="dandelion" alt="Dandelion">
+    <img src="leaves4.png" class="dandelion" alt="Dandelion">
+    <img src="leaves1.png" class="dandelion" alt="Dandelion">
+  </body>
+</html>
